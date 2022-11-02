@@ -1,0 +1,25 @@
+{
+  "rtl": true,
+  "dir": {
+    "dev": "assets/public",
+    "prod": "assets/build"
+  },
+  "style": {
+    "src": "assets/src/scss/**/*.scss",
+    "dest": "css"
+  },
+  "html": {
+    "src": "."
+  },
+  "script": {
+    "src": [
+      "assets/src/js/utils.js",
+      "assets/src/js/detector.js",
+      "assets/src/js/**/!(utils | detector  )*.js",
+      "assets/src/js/theme.js"
+    ],
+
+    "dest": "js"
+  },
+  "watch": ["img", "video", "fonts", "vendors"]
+}
