@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\FileController;
+use App\Http\Controllers\User\UserFileController;
 
 
 Route::get('/welcome', function () {
@@ -29,7 +30,5 @@ Route::middleware('auth')->group(function () {
 
 //************************************* end admin section  *****************************************
 });//is_admin end
-});
-//auth end
+});// user authentication end
 
-//****************************== visitor section ==****************************************
