@@ -24,7 +24,6 @@ class FileController extends Controller
      */
     public function create()
     {
-        return 10;
         return view('admin.file.create');
     }
 
@@ -36,7 +35,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
