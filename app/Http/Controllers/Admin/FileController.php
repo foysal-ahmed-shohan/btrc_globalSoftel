@@ -14,7 +14,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.file.list');
     }
 
     /**
@@ -24,7 +24,8 @@ class FileController extends Controller
      */
     public function create()
     {
-        //
+        return 10;
+        return view('admin.file.create');
     }
 
     /**
