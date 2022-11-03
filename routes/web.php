@@ -18,17 +18,14 @@ Route::middleware('auth')->group(function () {
 //************************************* USER section *************************************
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/user-index', [App\Http\Controllers\HomeController::class, 'user_index'])->name('user.index');
+    Route::resource('documentFile', FileController::class);
 //************************************* end user section**********************************
 
 
 //************************************* ADMIN section *************************************
     Route::group(['middleware' => ['is_admin']], function ()  {
         Route::get('/admin-index', [App\Http\Controllers\HomeController::class, 'admin_index'])->name('admin.index');
-    Route::group(['prefix' => '/type'], function() {
-        Route::resource('/package_category', \App\Http\Controllers\Admin\PackageCategoryController::class);
-    });
-
+        Route::resource('userFile', UserFileController::class);
 //************************************* end admin section  *****************************************
 });//is_admin end
 });// user authentication end
-
