@@ -1,30 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\PageController;
-use App\Http\Controllers\Admin\PackageCategoryController;
-use App\Http\Controllers\Admin\PackageController;
-//use App\Http\Controllers\SubscribeNewsletterController;
-use App\Http\Controllers\Admin\CommerceOrderController;
-use App\Http\Controllers\User\ProfileController;
-use App\Http\Controllers\Admin\AdminNotesStatusNameController;
-use App\Http\Controllers\Admin\AdminNoteController;
-use App\Http\Controllers\Admin\OrderStatusController;
-use App\Http\Controllers\Admin\PDFController;
-use App\Http\Controllers\Admin\CustomerController;
-use App\Http\Controllers\Admin\SearchFilterController;
-use App\Http\Controllers\Admin\SendMailController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
+
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Route::get('/', function () {
     return view('visitor.index');
 });
