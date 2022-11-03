@@ -19,7 +19,7 @@ class CreateFileDownloadActivitiesTable extends Migration
             $table->string('date')->nullable();
             $table->string('time')->nullable();
             $table->string('file_id')->nullable();
-            $table->string('status')->nullable();
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }
