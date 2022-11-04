@@ -2,7 +2,7 @@
 @section('content')
 <section class="container">
     <div class="user-box p-3 mt-4">
-        <h3 class="text-dark">User List</h3>
+        <h3 class="text-dark">User Login List</h3>
         <div class="under-line bg-black mb-3"></div>
 
         <div>
@@ -25,6 +25,8 @@
                     <td>1</td>
                     <td>Nur Tesla</td>
                     <td>assraf.nur@gmail.com</td>
+                    <td>21 February 2022</td>
+                    <td>21 February 2022</td>
                     <td>21 February 2022</td>
                     <td>10:00 AM</td>
                     <td>
