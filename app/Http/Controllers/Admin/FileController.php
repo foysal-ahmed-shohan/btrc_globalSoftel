@@ -18,7 +18,8 @@ class FileController extends Controller
      */
     public function index()
     {
-        return view('admin.file.list');
+        $files=File::where('status',1)->orderBy('id','DESC')->get();
+        return view('admin.file.list',compact('files'));
     }
 
     /**
@@ -57,7 +58,7 @@ class FileController extends Controller
             'status'=> 1,
 
         );
-        File::create($form_data);
+        $value=File::create($form_data);
         toastr()->success('Success');
         return back();
     }
