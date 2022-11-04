@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4">
-                                <img class="file-icon" src="/Images/files-icon.png" alt="">
+                                <img class="file-icon" src="{{asset('admin/Images/files-icon.png')}}" alt="">
                             </div>
                             <div class="col-8">
                                 <a title="Download" class="download-file-button2" href=""><i

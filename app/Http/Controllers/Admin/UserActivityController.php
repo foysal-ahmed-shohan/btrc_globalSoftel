@@ -12,9 +12,9 @@ class UserActivityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function login_index()
     {
-        //
+        return view('admin.userActivity.list');
     }
 
     /**

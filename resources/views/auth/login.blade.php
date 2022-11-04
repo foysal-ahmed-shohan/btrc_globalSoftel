@@ -5,92 +5,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business VoicePro</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Rubik:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-
-    <!-- Overlay Scrollbars CSS -->
-    <link rel="stylesheet" href="{{asset('visitor/assets/public/vendors/overlayscrollbars/OverlayScrollbars.min.cs')}}">
-
-    <!-- Theme CSS -->
-    <!-- <link rel="stylesheet" href="assets/public/css/theme-rtl.min.css"> -->
-    <link rel="stylesheet" href="{{asset('visitor/assets/public/css/theme.min.css')}}">
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('admin/CSS/style.css')}}">
+    <title>Login Page</title>
 </head>
 
-<body>
+<body class="login-page-body">
+<form method="POST" action="{{ route('login') }}">
+@csrf
+<section>
+    <div class="login-box mx-auto">
+        <h1 class="text-white text-center">Log in</h1>
+        <p class="text-center mt-5 mb-3">Log in and start managing your files!</p>
 
-<!-- Sign In Section Start -->
-<section class="p-0 min-vh-100">
-    <div class="container-fluid px-0">
-        <div class="row gx-0">
-            <div class="col-lg-6 d-none d-lg-block">
-                <img src="{{asset('visitor/assets/public/img/login.jpg')}}" class="img-fluid h-100 min-vh-100 fit-cover" alt="">
-            </div>
-            <div class="col-lg-6 bg-white d-flex align-items-center">
-                <div class="w-xxl-50 w-md-75 w-100 mx-auto py-6 px-4">
-                    <div class="text-center pb-5">
-                        <a class="navbar-brand m-0" href="index.html"><img src="{{asset('visitor/assets/public/img/logo.png')}}" width="80px" alt=""></a>
-                    </div>
-                    <h2 class="text-center mb-5">Sign In</h2>
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="input-group rounded-pill mb-3">
-                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            <input type="text" value="foysal@gmail.com" class="form-control form-control-lg  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
+        <input type="email" placeholder="email" id="exampleInputEmail1" class="input-field w-100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+        @error('email')
+        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                            @enderror
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                            <input type="password"  value="foysal@gmail.com" class="form-control form-control-lg" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
+        @enderror
+        <input type="password" placeholder="password"  id="exampleInputEmail1" class="input-field w-100 mt-4 @error('password') "is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+        @error('password')
+        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                            @enderror
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary btn-lg fs-1 w-100">Sign In</button>
-                        </div>
-                    </form>
-                    <hr class="my-4" />
-                    <div class="text-center">
-                        <p><a class="text-primary" href="">Forgot Password?</a></p>
-                        <p>Don't have an account? <a href="" class="text-primary">Sign Up Now</a></p>
-                    </div>
-                </div>
+        @enderror
+        <div class="d-flex justify-content-between mt-4">
+            <div>
+                <input type="checkbox" class="check ms-1" id="exampleCheck1">
+                <label class="form-check-label ms-2" for="exampleCheck1">Remember me</label>
             </div>
+
+            <a class="forgot-text mb-1">Forgot password?</a>
         </div>
+
+        <button type="submit" class="login-button w-100 mt-3">Login</button>
+    </div>
+    <div>
+        <img class="bottom-lines fixed-bottom" src="{{asset('admin/Images/back-lines.png')}}" alt="">
     </div>
 </section>
-<!-- Sign In Section End -->
+</form>
 
-
-<!-- Bootstrap JS -->
-<script src="{{asset('visitor/assets/public/vendors/@popperjs/popper.min.js')}}"></script>
-<script src="{{asset('visitor/assets/public/vendors/bootstrap/bootstrap.min.js')}}"></script>
-
-<!-- IS JS -->
-<script src="{{asset('visitor/assets/public/vendors/is/is.min.js')}}"></script>
-
-<!-- Polyfill JS -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-
-<!-- FontAwesome JS -->
-<script src="{{asset('visitor/assets/public/vendors/fontawesome/all.min.js')}}"></script>
-
-<!-- Big Picture JS -->
-<script src="{{asset('visitor/assets/public/vendors/bigpicture/BigPicture.min.js')}}"></script>
-
-<!-- Overlay Scrollbar JS -->
-<script src="{{asset('visitor/assets/public/vendors/overlayscrollbars/OverlayScrollbars.min.js')}}"></script>
-
-<!-- Theme JS -->
-<script src="{{asset('visitor/assets/public/js/theme.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+</script>
 </body>
 
 </html>
