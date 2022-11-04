@@ -16,7 +16,7 @@
                                     <img class="file-icon" src="{{asset('admin/Images/files-icon.png')}}" alt="">
                                 </div>
                                 <div class="col-8">
-                                    <a title="Download" class="download-file-button2" href=""><i
+                                    <a title="Download" class="download-file-button2" href="{{ route('documentFile.show',$value->id) }}"><i
                                             class="bi text-black px-2 py-2 fs-3 bi-box-arrow-down"></i></a>
                                     <a title="Delete" class="download-file-button text-danger px-2 py-0 fs-3" href="">
                                         <i class="bi bi-trash3-fill"></i>

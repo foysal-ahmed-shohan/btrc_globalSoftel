@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\File;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Response;
 use PhpOffice\PhpSpreadsheet\Calculation\Statistical\Distributions\F;
 
 class FileController extends Controller
@@ -52,6 +53,7 @@ class FileController extends Controller
             'time'=> $request->get('time'),
             'file_modified_name'=> $file_unique_naming,
             'file_original_name'=> $fileName,
+            'file_original_name_with_extension'=> $file_name_with_extension,
             'note'=> $request->get('note'),
             'original_date'=> date('d M Y'),
             'original_time'=> date('h:i:s A'),
@@ -71,7 +73,13 @@ class FileController extends Controller
      */
     public function show($id)
     {
-        //
+        //return $id;
+        $value=File::where('id',$id)->first();
+        $file= public_path(). "/file/".$value->file_modified_name;
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
+        return Response::download($file, $value->file_original_name.'.'.$value->file_original_name_with_extension, $headers);
     }
 
     /**

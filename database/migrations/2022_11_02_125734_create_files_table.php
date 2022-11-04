@@ -20,6 +20,7 @@ class CreateFilesTable extends Migration
             $table->string('time')->nullable();
             $table->string('file_modified_name')->nullable();
             $table->string('file_original_name')->nullable();
+            $table->string('file_original_name_with_extension')->nullable();
             $table->string('note')->nullable();
             $table->string('original_date')->nullable();
             $table->string('original_time')->nullable();
