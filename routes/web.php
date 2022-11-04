@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/user-index', [App\Http\Controllers\HomeController::class, 'user_index'])->name('user.index');
     Route::resource('documentFile', FileController::class);
+    Route::get('/user-index', [App\Http\Controllers\HomeController::class, 'user_index'])->name('user.index');
 //************************************* end user section**********************************
 
 
