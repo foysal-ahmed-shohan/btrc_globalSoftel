@@ -28,7 +28,7 @@
                                         Date: {{date('d M, Y', strtotime($value->date))}}
                                     </small><br>
                                     <small class="">
-                                        Note:  {{$value->Note}}
+                                        Note:  {{$value->note}}
                                     </small>
                                 </div>
                             </div>

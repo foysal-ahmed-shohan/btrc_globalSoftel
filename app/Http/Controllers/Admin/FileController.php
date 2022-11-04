@@ -30,7 +30,8 @@ class FileController extends Controller
      */
     public function create()
     {
-        return view('admin.file.create');
+        $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
+        return view('admin.file.create',compact('files'));
     }
 
     /**
@@ -62,7 +63,9 @@ class FileController extends Controller
         );
         $value=File::create($form_data);
         toastr()->success('Success');
-        return back();
+       // return back();
+        $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
+        return view('admin.file.create',compact('files'));
     }
 
     /**
@@ -73,7 +76,6 @@ class FileController extends Controller
      */
     public function show($id)
     {
-        //return $id;
         $value=File::where('id',$id)->first();
         $file= public_path(). "/file/".$value->file_modified_name;
         $headers = array(

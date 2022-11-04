@@ -30,11 +30,11 @@
         <div class="mt-3 mb-5">
             <div class="card" style="height: 300px; overflow: auto;">
                 <div class="card-body">
-                    <h5 class="card-title border-bottom pb-2 px-0">Debug Messages</h5>
+                    <h5 class="card-title border-bottom pb-2 px-0">File History</h5>
                     <div class="mt-3">
-                        <p class="border-bottom pb-3"><strong class="me-3">15:27:57</strong>Starting the upload</p>
-                        <p class="border-bottom pb-3"><strong class="me-3">16:27:57</strong>New file added</p>
-                        <p class="border-bottom pb-3"><strong class="me-3">00:27:57</strong>Initialize the file</p>
+                        @foreach($files as $value)
+                         <p class="border-bottom pb-3"><strong class="me-3">{{date('d M, Y', strtotime($value->date))}} {{date('d M, Y', strtotime($value->date))}}</strong>{{$value->file_original_name}}</p>
+                        @endforeach
                     </div>
                 </div>
             </div>
