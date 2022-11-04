@@ -20,10 +20,14 @@
     <!-- Datatable plugin JS library file -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
     </script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <title>File Upload</title>
 </head>
 
 <body class="file-upload-page-body">
+@jquery
+@toastr_js
+@toastr_render
 <section class="">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">

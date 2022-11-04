@@ -35,7 +35,10 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-
+        $fileName = time().'.'.$request->file_document->extension();
+        $request->file_document->move(public_path('uploads'), $fileName);
+        toastr()->success('Success');
+        return back();
     }
 
     /**

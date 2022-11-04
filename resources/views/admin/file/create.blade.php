@@ -2,10 +2,12 @@
 @section('content')
     <section class="container">
         <h1 class="mt-5 mb-3">File Uploader Widget</h1>
+    <form method="POST" action="{{ route('documentFile.store') }}" enctype="multipart/form-data">
+            @csrf
         <div class="file-upload-box row gap-3">
             <div class="col-md file-row">
                 <div class="file-upload-sub-box">
-                    <input id="file-upload" class="upload-box" type="file" name="file-upload" multiple>
+                    <input id="file-upload" class="upload-box" type="file" name="file_document" multiple>
                     <label for="upload_costum" class="file-upload-label text-white">
                         <h3 id="file-title" class="file-name">Drag & Drop files here</h3>
                         <button id="file-submit" class="disabled">Open the file browser</button>
@@ -20,9 +22,10 @@
                 <br>
                 <textarea placeholder="Note" class="file-description border w-100 p-3" name="note" id="" cols="30"
                           rows="5"></textarea>
-                <button class="mt-2 login-button w-100">Submit</button>
+                <button type="submit" class="mt-2 login-button w-100">Submit</button>
             </div>
         </div>
+    </form>
 
         <div class="mt-3 mb-5">
             <div class="card" style="height: 300px; overflow: auto;">
