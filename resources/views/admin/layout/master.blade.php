@@ -33,7 +33,7 @@
             <!-- <a class="navbar-brand" href="#">
 
             </a> -->
-            
+            <img class="logo" src="{{asset('admin/Images/logo.png')}}" alt="">
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
