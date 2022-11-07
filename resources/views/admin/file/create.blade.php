@@ -31,9 +31,6 @@
             <div class="card-body">
                 <h5 class="card-title border-bottom pb-2 px-0">File History</h5>
                 <div class="mt-3">
-                    <!-- @foreach($files as $value)
-                         <p class="border-bottom pb-3"><strong class="me-3">{{date('d M, Y', strtotime($value->date))}} {{date('h:s:i A', strtotime($value->time))}}</strong>{{$value->file_original_name}}</p>
-                        @endforeach -->
                     <table class="text-dark table">
                         <thead class="bg-white text-dark">
                             <tr>
@@ -44,12 +41,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($files as $value)
                             <tr>
-                                <td>file.pdf</td>
-                                <td>21/02/2022</td>
-                                <td>10:00 AM</td>
-                                <td>Future file</td>
+                                <td>{{$value->file_original_name}}</td>
+                                <td>{{date('d M, Y', strtotime($value->date))}}</td>
+                                <td>{{date('h:s:i A', strtotime($value->time))}}</td>
+                                <td>{{$value->Note}}</td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
