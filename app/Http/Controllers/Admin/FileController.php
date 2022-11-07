@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Response;
 use PhpOffice\PhpSpreadsheet\Calculation\Statistical\Distributions\F;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Paginator;;
 
 class FileController extends Controller
 {
@@ -20,7 +21,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        $files=File::where('status',1)->orderBy('id','DESC')->get();
+        $files=File::where('status',1)->orderBy('id','DESC')->paginate(12);
         return view('admin.file.list',compact('files'));
     }
 
@@ -43,12 +44,14 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+        if(empty($request->file_document)){
+            $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
+            return view('admin.file.create',compact('files'));
+        }
         $file_name_with_extension= $request->file('file_document')->getClientOriginalName();
         $fileName = pathinfo($file_name_with_extension, PATHINFO_FILENAME);
         $file_unique_naming = $fileName.time().'.'.$request->file_document->extension();
-
         $request->file_document->move(public_path('file'), $file_unique_naming);
-
         $form_data = array(
             'user_id'=> Auth::id(),
             'date'=> $request->get('date'),
@@ -60,12 +63,11 @@ class FileController extends Controller
             'original_date'=> date('d M Y'),
             'original_time'=> date('h:i:s A'),
             'status'=> 1,
-
         );
         $value=File::create($form_data);
         toastr()->success('Success');
-       // return back();
         $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
+        unset($request->file_document);
         return view('admin.file.create',compact('files'));
     }
 
