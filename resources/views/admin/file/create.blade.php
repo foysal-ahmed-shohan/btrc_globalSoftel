@@ -21,13 +21,13 @@
                 </div>
                 <br>
                 <textarea placeholder="Note" class="file-description border w-100 p-3" name="note" id="" cols="30" rows="5"></textarea>
-                <button type="submit" class="mt-2 login-button w-100">Submit</button>
+                <button type="submit" class="mt-3 login-button w-100">Submit</button>
             </div>
         </div>
     </form>
 
     <div class="mt-3 mb-5">
-        <div style="width: 99%" class="card" style="height: 300px; overflow: auto;">
+        <div class="card card-style" style="height: 300px; overflow: auto;">
             <div class="card-body">
                 <h5 class="card-title border-bottom pb-2 px-0">File History</h5>
                 <div class="mt-3">
