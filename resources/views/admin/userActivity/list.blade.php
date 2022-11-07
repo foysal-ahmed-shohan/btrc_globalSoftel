@@ -16,27 +16,28 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Ip Address</th>
-                    <th>Action</th>
+{{--                    <th>Action</th>--}}
                 </tr>
                 </thead>
                 <tbody>
-
+                @php $key=1; @endphp
+                @foreach($activities as $value)
                 <tr>
-                    <td>1</td>
-                    <td>Nur Tesla</td>
-                    <td>assraf.nur@gmail.com</td>
-                    <td>21 February 2022</td>
-                    <td>21 February 2022</td>
-                    <td>21 February 2022</td>
-                    <td>10:00 AM</td>
-                    <td>
-                        <div>
-                            <a title="Edit" href=""><i class="bi bi-pencil-square text-dark"></i></a>
-                            <a title="Delete" href=""><i class="bi bi-trash3-fill text-dark ms-3"></i></a>
-                        </div>
-                    </td>
+                    <td>{{$key++}}</td>
+                    <td>@if($value->is_admin==1)Admin @else User @endif</td>
+                    <td>{{$value->name}}</td>
+                    <td>{{$value->email}}</td>
+                    <td>{{$value->date}}</td>
+                    <td>{{$value->time}}</td>
+                    <td>{{$value->ip_address}}</td>
+{{--                    <td>--}}
+{{--                        <div>--}}
+{{--                            <a title="Edit" href=""><i class="bi bi-pencil-square text-dark"></i></a>--}}
+{{--                            <a title="Delete" href=""><i class="bi bi-trash3-fill text-dark ms-3"></i></a>--}}
+{{--                        </div>--}}
+{{--                    </td>--}}
                 </tr>
-
+                @endforeach
 
                 </tbody>
             </table>

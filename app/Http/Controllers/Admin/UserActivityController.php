@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\LoginActivity;
+use App\Models\User;
 
 class UserActivityController extends Controller
 {
@@ -14,7 +16,9 @@ class UserActivityController extends Controller
      */
     public function index()
     {
-        return view('admin.userActivity.list');
+        //$activities=User::where('status',1)->orderBy('id','DESC')->get();
+        $activities=LoginActivity::join('users', 'login_activities.user_id', '=', 'users.id')->orderBy('id','DESC')->get(['login_activities.*','users.is_admin','users.name','users.email']);
+        return view('admin.userActivity.list',compact('activities'));
     }
 
     /**
