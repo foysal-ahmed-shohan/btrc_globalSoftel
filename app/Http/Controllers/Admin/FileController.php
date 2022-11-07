@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Models\File;
 use App\Models\FileDownloadActivity;
@@ -80,16 +81,21 @@ class FileController extends Controller
      */
     public function show($id)
     {
-        $value=File::where('id',$id)->first();
+        $value = File::where('id', $id)->first();
+        $user_info = User::where('id', $value->user_id)->first();
+        //return $user_info;
         //document download activity history
-        $form_data = array(
-            'user_id'=> Auth::id(),
-            'file_id'=> $id,
-            'date'=> date('d M Y'),
-            'time'=> date('h:i:s A'),
-            'status'=> 1,
-        );
-        $data=FileDownloadActivity::create($form_data);
+        if ($user_info->is_admin != 1){
+            $form_data = array(
+                'user_id' => Auth::id(),
+                'file_id' => $id,
+                'date' => date('d M Y'),
+                'time' => date('h:i:s A'),
+                //'ip_address'=> date('h:i:s A'),
+                'status' => 1,
+            );
+        $data = FileDownloadActivity::create($form_data);
+        }
         //file download from storage
         $file= public_path(). "/file/".$value->file_modified_name;
         $headers = array(

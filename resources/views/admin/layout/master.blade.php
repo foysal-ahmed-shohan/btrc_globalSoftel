@@ -49,6 +49,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route('userLoginActivity.index')}}">Users</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{route('fileDownloadActivity.index')}}">Download Activity</a>
+                    </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link text-white" href="{{route('documentFile.create')}}">Login</a>--}}
 {{--                    </li>--}}

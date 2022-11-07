@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\User\UserFileController;
 use App\Http\Controllers\Admin\UserActivityController;
+use App\Http\Controllers\Admin\FileDownloadActivityController;
 
 
 Route::get('/welcome', function () {
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('documentFile', FileController::class);
     // user activity section
     Route::resource('userLoginActivity', UserActivityController::class);
+    Route::resource('fileDownloadActivity', FileDownloadActivityController::class);
 //************************************* end user section**********************************
 
 
