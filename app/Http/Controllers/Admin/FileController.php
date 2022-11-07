@@ -140,7 +140,7 @@ class FileController extends Controller
             $path = public_path()."/file/".$data->file_modified_name;
             unlink($path);
             $delete=File::where('id',$id)->delete();
-            toastr()->success('Successfully Delted Data');
+            toastr()->success('Successfully Deleted Data');
             return back();
         }
         else{

@@ -10,11 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-
     <!-- jQuery library file -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
     </script>
-
     <!-- Datatable plugin JS library file -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
     </script>
@@ -31,7 +29,6 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <!-- <a class="navbar-brand" href="#">
-
             </a> -->
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -43,20 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-white {{ (request()->is('documentFile')) ? 'border-bottom' : '' }}" aria-current="page" href="{{route('allFile.index')}}">All Files</a>
                     </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link text-white {{ (request()->is('documentFile/create')) ? 'border-bottom' : '' }}" href="{{route('documentFile.create')}}">Upload File</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link text-white {{ (request()->is('userLoginActivity')) ? 'border-bottom' : '' }}" href="{{route('userLoginActivity.index')}}">Users</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link text-white {{ (request()->is('fileDownloadActivity')) ? 'border-bottom' : '' }}" href="{{route('fileDownloadActivity.index')}}">Download Activity</a>--}}
-{{--                    </li>--}}
-                    {{--                    <li class="nav-item">--}}
-                    {{--                        <a class="nav-link text-white" href="{{route('documentFile.create')}}">Login</a>--}}
-                    {{--                    </li>--}}
                     <li class="nav-item">
-                        {{--                        <a class="nav-link text-white" href="{{route('documentFile.create')}}">Logout</a>--}}
                         <a class="nav-link text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"><i class="fas fa-power-off"></i> Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

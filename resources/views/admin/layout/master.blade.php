@@ -47,7 +47,7 @@
                         <a class="nav-link text-white {{ (request()->is('documentFile/create')) ? 'border-bottom' : '' }}" href="{{route('documentFile.create')}}">Upload File</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white {{ (request()->is('userLoginActivity')) ? 'border-bottom' : '' }}" href="{{route('userLoginActivity.index')}}">Users</a>
+                        <a class="nav-link text-white {{ (request()->is('userLoginActivity')) ? 'border-bottom' : '' }}" href="{{route('userLoginActivity.index')}}">Users Activity</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white {{ (request()->is('fileDownloadActivity')) ? 'border-bottom' : '' }}" href="{{route('fileDownloadActivity.index')}}">Download Activity</a>

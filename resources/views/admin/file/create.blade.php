@@ -7,7 +7,7 @@
         <div class="file-upload-box row gap-3">
             <div class="col-md file-row">
                 <div class="file-upload-sub-box">
-                    <input id="file-upload" class="upload-box" type="file" name="file_document" multiple>
+                    <input id="file-upload" required class="upload-box" type="file" name="file_document" multiple>
                     <label for="upload_costum" class="file-upload-label text-white">
                         <h3 id="file-title" class="file-name">Drag & Drop files here</h3>
                         <button id="file-submit" class="disabled">Open the file browser</button>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-md p-3">
                 <div class="d-flex gap-4">
-                    <input class="file-description border w-50 p-3" type="date" name="date" id="">
+                    <input class="file-description border w-50 p-3" required type="date" name="date" id="">
                     <input class="file-description border w-50 p-3" type="time" name="time" id="">
                 </div>
                 <br>

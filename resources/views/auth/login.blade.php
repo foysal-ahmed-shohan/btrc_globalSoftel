@@ -9,10 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('admin/CSS/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <title>Login Page</title>
 </head>
 
 <body class="login-page-body">
+@jquery
+@toastr_js
+@toastr_render
 <form method="POST" action="{{ route('login') }}">
 @csrf
 <section>
