@@ -24,7 +24,7 @@
 
                                     <div class="d-flex">
                                         <form id="delete-form-{{ $value->id }}" action="{{ route('documentFile.destroy',$value->id) }}" method="POST">
-                                            {{csrf_field()}}flat
+                                            {{csrf_field()}}
                                             {{ method_field('DELETE') }}
                                         </form>
                                         <a href="#" class="download-file-button text-danger px-2 py-0 fs-3" title="Delete" onclick="if(confirm('Are you sure? You want to delete this?')){
