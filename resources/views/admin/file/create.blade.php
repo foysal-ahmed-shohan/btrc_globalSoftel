@@ -33,7 +33,7 @@
                     <h5 class="card-title border-bottom pb-2 px-0">File History</h5>
                     <div class="mt-3">
                         @foreach($files as $value)
-                         <p class="border-bottom pb-3"><strong class="me-3">{{date('d M, Y', strtotime($value->date))}} {{date('d M, Y', strtotime($value->date))}}</strong>{{$value->file_original_name}}</p>
+                         <p class="border-bottom pb-3"><strong class="me-3">{{date('d M, Y', strtotime($value->date))}} {{date('h:s:i A', strtotime($value->time))}}</strong>{{$value->file_original_name}}</p>
                         @endforeach
                     </div>
                 </div>

@@ -18,11 +18,25 @@
                                 <div class="col-8">
                                     <a title="Download" class="download-file-button2" href="{{ route('documentFile.show',$value->id) }}"><i
                                             class="bi text-black px-2 py-2 fs-3 bi-box-arrow-down"></i></a>
-                                    <a title="Delete" class="download-file-button text-danger px-2 py-0 fs-3" href="">
-                                        <i class="bi bi-trash3-fill"></i>
-                                    </a>
+{{--                                    <a title="Delete" class="download-file-button text-danger px-2 py-0 fs-3" href="">--}}
+{{--                                        <i class="bi bi-trash3-fill"></i>--}}
+{{--                                    </a>--}}
+
+                                    <div class="d-flex">
+                                        <form id="delete-form-{{ $value->id }}" action="{{ route('documentFile.destroy',$value->id) }}" method="POST">
+                                            {{csrf_field()}}flat
+                                            {{ method_field('DELETE') }}
+                                        </form>
+                                        <a href="#" class="download-file-button text-danger px-2 py-0 fs-3" title="Delete" onclick="if(confirm('Are you sure? You want to delete this?')){
+                                            event.preventDefault();
+                                            document.getElementById('delete-form-{{ $value->id }}').submit();
+                                            }else {
+                                            event.preventDefault();
+                                            }"> <i class="bi bi-trash3-fill"></i></a>
+                                    </div>
+
                                     <small>
-                                        File Name: {{$value->file_original_name}}
+                                        File Name: {{$value->file_original_name}}<br>
                                     </small>
                                     <small>
                                         Date: {{date('d M, Y', strtotime($value->date))}}

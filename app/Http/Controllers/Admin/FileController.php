@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Response;
 use PhpOffice\PhpSpreadsheet\Calculation\Statistical\Distributions\F;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -115,6 +116,18 @@ class FileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=File::where('id',$id)->first();
+        if($data){
+            $path = public_path()."/file/".$data->file_modified_name;
+            unlink($path);
+            $delete=File::where('id',$id)->delete();
+            toastr()->success('Successfully Delted Data');
+            return back();
+        }
+        else{
+            //toastr()->success('Success');
+            return back();
+        }
+
     }
 }
