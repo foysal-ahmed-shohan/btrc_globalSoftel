@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\File;
+use App\Models\FileDownloadActivity;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Response;
@@ -80,6 +81,16 @@ class FileController extends Controller
     public function show($id)
     {
         $value=File::where('id',$id)->first();
+        //document download activity history
+        $form_data = array(
+            'user_id'=> Auth::id(),
+            'file_id'=> $id,
+            'date'=> date('d M Y'),
+            'time'=> date('h:i:s A'),
+            'status'=> 1,
+        );
+        $data=FileDownloadActivity::create($form_data);
+        //file download from storage
         $file= public_path(). "/file/".$value->file_modified_name;
         $headers = array(
             'Content-Type: application/pdf',
