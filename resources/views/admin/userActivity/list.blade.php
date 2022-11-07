@@ -2,7 +2,7 @@
 @section('content')
 <section class="container">
     <div class="user-box p-3 mt-4">
-        <h3 class="text-dark">User Login List</h3>
+        <h3 class="text-dark">User Login Activity List</h3>
         <div class="under-line bg-black mb-3"></div>
 
         <div>
