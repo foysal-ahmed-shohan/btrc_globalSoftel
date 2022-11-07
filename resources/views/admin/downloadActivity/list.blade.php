@@ -5,7 +5,7 @@
         <h3 class="text-dark">File Download Activity List</h3>
         <div class="under-line bg-black mb-3"></div>
 
-        <div>
+        <div class="overflow-auto">
             <table id="myTable" class="text-dark table">
                 <thead class="bg-white text-dark">
                 <tr>
