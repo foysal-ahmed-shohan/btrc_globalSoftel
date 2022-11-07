@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use View;
@@ -28,23 +29,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         if(Auth()->user()->is_admin==1){
-            return view('admin.index');
+            $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
+            return view('admin.index',compact('files'));
         }
         else{
-            $user=User::where('id',Auth::id())->first();
-            return view('user.index');
+            $files=File::where('status',1)->orderBy('id','DESC')->paginate(12);
+            return view('user.index',compact('files'));
         }
     }
 
     public function admin_index()
     {
-        return view('admin.index');
+        $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
+        return view('admin.index',compact('files'));
     }
 
     public function user_index()
     {
-        return view('user.index');
+        $files=File::where('status',1)->orderBy('id','DESC')->paginate(12);
+        return view('user.index',compact('files'));
     }
 }

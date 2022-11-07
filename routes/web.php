@@ -20,17 +20,17 @@ Route::middleware('auth')->group(function () {
 //************************************* USER section *************************************
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/user-index', [App\Http\Controllers\HomeController::class, 'user_index'])->name('user.index');
-    Route::resource('documentFile', FileController::class);
-    // user activity section
-    Route::resource('userLoginActivity', UserActivityController::class);
-    Route::resource('fileDownloadActivity', FileDownloadActivityController::class);
+    Route::resource('allFile', UserFileController::class);
 //************************************* end user section**********************************
 
 
 //************************************* ADMIN section *************************************
     Route::group(['middleware' => ['is_admin']], function ()  {
         Route::get('/admin-index', [App\Http\Controllers\HomeController::class, 'admin_index'])->name('admin.index');
-        Route::resource('userFile', UserFileController::class);
+        Route::resource('documentFile', FileController::class);
+        // user activity section
+        Route::resource('userLoginActivity', UserActivityController::class);
+        Route::resource('fileDownloadActivity', FileDownloadActivityController::class);
 //************************************* end admin section  *****************************************
 });//is_admin end
 });// user authentication end

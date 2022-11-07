@@ -1,8 +1,8 @@
 @extends('admin.layout.master')
 @section('content')
 <section class="container">
-    <h1 class="mt-5 mb-3">File Uploader Widget</h1>
-    <form method="POST" action="{{ route('documentFile.store') }}" enctype="multipart/form-data">
+{{--    <h1 class="mt-5 mb-3">File Uploader Widget</h1>--}}
+    <form method="POST" class="mt-5" action="{{ route('documentFile.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="file-upload-box row gap-3">
             <div class="col-md file-row">

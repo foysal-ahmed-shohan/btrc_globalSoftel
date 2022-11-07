@@ -9,8 +9,6 @@
           integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('admin/CSS/style.css')}}">
-
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 
     <!-- jQuery library file -->
@@ -20,10 +18,15 @@
     <!-- Datatable plugin JS library file -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
     </script>
+    <link rel="stylesheet" href="{{asset('admin/CSS/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <title>File Upload</title>
 </head>
 
 <body class="file-upload-page-body">
+{{--@jquery--}}
+@toastr_js
+@toastr_render
 <section class="">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -38,17 +41,20 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto gap-4">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="{{route('documentFile.index')}}">File View</a>
+                        <a class="nav-link text-white {{ (request()->is('documentFile')) ? 'border-bottom' : '' }}" aria-current="page" href="{{route('allFile.index')}}">All Files</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white border-bottom" href="{{route('documentFile.create')}}">Upload Files</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{route('userLogin.index')}}">Users</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{route('documentFile.create')}}">Login</a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link text-white {{ (request()->is('documentFile/create')) ? 'border-bottom' : '' }}" href="{{route('documentFile.create')}}">Upload File</a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link text-white {{ (request()->is('userLoginActivity')) ? 'border-bottom' : '' }}" href="{{route('userLoginActivity.index')}}">Users</a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link text-white {{ (request()->is('fileDownloadActivity')) ? 'border-bottom' : '' }}" href="{{route('fileDownloadActivity.index')}}">Download Activity</a>--}}
+{{--                    </li>--}}
+                    {{--                    <li class="nav-item">--}}
+                    {{--                        <a class="nav-link text-white" href="{{route('documentFile.create')}}">Login</a>--}}
+                    {{--                    </li>--}}
                     <li class="nav-item">
                         {{--                        <a class="nav-link text-white" href="{{route('documentFile.create')}}">Logout</a>--}}
                         <a class="nav-link text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -85,12 +91,6 @@
     });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -98,6 +98,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
 </script>
+@yield('extra_script')
 </body>
 
 </html>
