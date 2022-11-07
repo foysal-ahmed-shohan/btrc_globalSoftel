@@ -27,7 +27,7 @@
     </form>
 
     <div class="mt-3 mb-5">
-        <div style="left: -122px; width: 99%" class="card" style="height: 300px; overflow: auto;">
+        <div style="width: 99%" class="card" style="height: 300px; overflow: auto;">
             <div class="card-body">
                 <h5 class="card-title border-bottom pb-2 px-0">File History</h5>
                 <div class="mt-3">

@@ -124,9 +124,8 @@ input[type=checkbox] {
 }
 
 .card {
+    width: 32%;
     margin-top: 10px;
-    margin-left: 125px;
-    margin-right: -115px;
 }
 
 .file-view-box {
@@ -162,7 +161,7 @@ input[type=checkbox] {
     background-color: white;
     border-radius: 50%;
     margin-top: -40px;
-    margin-left: 130px;
+    margin-left: 190px;
     transition: transform .2s;
 }
 
@@ -184,7 +183,7 @@ input[type=checkbox] {
     background-color: white;
     border-radius: 50%;
     margin-top: -40px;
-    margin-left: 70px;
+    margin-left: 130px;
     transition: transform .2s;
 }
 
@@ -220,6 +219,7 @@ input[type=checkbox] {
     .card {
         margin-top: 10px;
         width: 85%;
+        margin-left: 125px;
     }
 
     .view-box {
@@ -232,11 +232,11 @@ input[type=checkbox] {
         background-color: white;
         border-radius: 50%;
         margin-top: -40px;
-        margin-left: 325px;
+        right: 10px;
     }
 
     .download-file-button {
-        right: 120px;
+        right: 70px;
     }
 
     .lower-wave2 {
@@ -296,6 +296,7 @@ input[type=checkbox] {
     .card {
         margin-top: 10px;
         width: 74%;
+        margin-left: 125px;
     }
 
     .view-box {
