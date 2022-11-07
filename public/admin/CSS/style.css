@@ -122,14 +122,19 @@ input[type=checkbox] {
     height: 3px;
     padding: 0px;
 }
-.card{
+
+.card {
     margin-top: 10px;
+    margin-left: 125px;
+    margin-right: -115px;
 }
 
 .file-view-box {
     background-color: #224957;
     border-radius: 10px;
+    position: relative;
 }
+
 .user-box {
     background-color: white;
     border-radius: 10px;
@@ -140,29 +145,49 @@ input[type=checkbox] {
     margin-left: -15px;
 }
 
-/* .view-box {
-    margin-left: 40px;
-} */
 
 .lower-wave {
-   margin-top: -300px;
+    position: inherit;
+    margin-top: -220px;
 }
-.download-file-button2{
+
+.lower-wave2 {
+    position: inherit;
+    margin-top: -370px;
+}
+
+.download-file-button2 {
     border: 1px solid #8a8a8a;
     position: absolute;
     background-color: white;
     border-radius: 50%;
     margin-top: -40px;
     margin-left: 130px;
+    transition: transform .2s;
 }
-.download-file-button{
+
+.download-file-button:hover {
+    box-shadow: rgba(253, 93, 0, 0.12) 0px 2px 4px 0px, rgba(248, 3, 3, 0.32) 0px 2px 16px 0px;
+    border: 1px solid #ff00006e;
+    transform: scale(1.2);
+}
+
+.download-file-button2:hover {
+    box-shadow: rgba(0, 253, 34, 0.12) 0px 2px 4px 0px, rgba(3, 248, 3, 0.32) 0px 2px 16px 0px;
+    border: 1px solid #00800088;
+    transform: scale(1.2);
+}
+
+.download-file-button {
     border: 1px solid #8a8a8a;
     position: absolute;
     background-color: white;
     border-radius: 50%;
     margin-top: -40px;
     margin-left: 70px;
+    transition: transform .2s;
 }
+
 @media (max-width: 992px) {
     .login-box {
         color: white;
@@ -192,19 +217,38 @@ input[type=checkbox] {
         pointer-events: none;
     }
 
-    .view-box {
-        margin-left: -10px;
+    .card {
+        margin-top: 10px;
+        width: 85%;
     }
-    .download-file-button2{
+
+    .view-box {
+        margin-left: -145px;
+    }
+
+    .download-file-button2 {
         border: 1px solid #8a8a8a;
         position: absolute;
         background-color: white;
         border-radius: 50%;
-        margin-top: -35px;
+        margin-top: -40px;
         margin-left: 325px;
     }
-    .lower-wave{
+
+    .download-file-button {
+        right: 120px;
+    }
+
+    .lower-wave2 {
         display: none;
+    }
+
+    .lower-wave {
+        display: none;
+    }
+
+    .pagination {
+        margin-left: 150px;
     }
 }
 
@@ -251,20 +295,31 @@ input[type=checkbox] {
 
     .card {
         margin-top: 10px;
+        width: 74%;
     }
 
     .view-box {
-        margin-left: -10px;
+        margin-left: -145px;
     }
-    .download-file-button2{
+
+    .download-file-button {
+        margin-right: -30px;
+    }
+
+    .download-file-button2 {
         border: 1px solid #8a8a8a;
         position: absolute;
         background-color: white;
         border-radius: 50%;
-        margin-top: -35px;
+        margin-top: -40px;
         margin-left: 125px;
     }
-    .lower-wave{
+
+    .lower-wave2 {
+        display: none;
+    }
+
+    .lower-wave {
         display: none;
     }
 }
