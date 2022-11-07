@@ -8,6 +8,12 @@ h1 {
     color: white;
 }
 
+.logo {
+    width: 10%;
+    margin-left: 300px;
+    margin-right: -300px;
+}
+
 .login-page-body,
 .file-upload-page-body,
 .file-view-body,
@@ -192,6 +198,12 @@ input[type=checkbox] {
 }
 
 @media (max-width: 992px) {
+    .logo {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 30%;
+    }
+
     .login-box {
         color: white;
         width: 60%;
@@ -262,6 +274,12 @@ input[type=checkbox] {
 }
 
 @media (max-width: 600px) {
+    .logo {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 40%;
+    }
+
     .login-box {
         color: white;
         width: 90%;
