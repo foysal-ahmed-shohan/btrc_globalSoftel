@@ -41,16 +41,16 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto gap-4">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="{{route('documentFile.index')}}">File View</a>
+                        <a class="nav-link text-white {{ (request()->is('documentFile')) ? 'border-bottom' : '' }}" aria-current="page" href="{{route('documentFile.index')}}">All Files</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white border-bottom" href="{{route('documentFile.create')}}">Upload Files</a>
+                        <a class="nav-link text-white {{ (request()->is('documentFile/create')) ? 'border-bottom' : '' }}" href="{{route('documentFile.create')}}">Upload File</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{route('userLoginActivity.index')}}">Users</a>
+                        <a class="nav-link text-white {{ (request()->is('userLoginActivity')) ? 'border-bottom' : '' }}" href="{{route('userLoginActivity.index')}}">Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{route('fileDownloadActivity.index')}}">Download Activity</a>
+                        <a class="nav-link text-white {{ (request()->is('fileDownloadActivity')) ? 'border-bottom' : '' }}" href="{{route('fileDownloadActivity.index')}}">Download Activity</a>
                     </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link text-white" href="{{route('documentFile.create')}}">Login</a>--}}

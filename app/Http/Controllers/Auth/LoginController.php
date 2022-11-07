@@ -37,20 +37,20 @@ class LoginController extends Controller
         ]);
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-            // insert user login activity on database
-            $user_value= auth()->user();
-            $ip=$request->ip();
-            $form_data = array(
-                'user_id'=> Auth::id(),
-                'date'=> date('d M Y'),
-                'time'=> date('h:i:s A'),
-                'ip_address'=> $ip,
-                'status'=> 1,
-            );
-            $value=LoginActivity::create($form_data);
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.index');
             }else{
+                // insert user login activity on database
+                $user_value= auth()->user();
+                $ip=$request->ip();
+                $form_data = array(
+                    'user_id'=> Auth::id(),
+                    'date'=> date('d M Y'),
+                    'time'=> date('h:i:s A'),
+                    'ip_address'=> $ip,
+                    'status'=> 1,
+                );
+                $value=LoginActivity::create($form_data);
                 return redirect()->route('user.index');
             }
         }else{
