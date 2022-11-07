@@ -128,6 +128,10 @@ input[type=checkbox] {
     margin-top: 10px;
 }
 
+.card-style {
+    width: 100%;
+}
+
 .file-view-box {
     background-color: #224957;
     border-radius: 10px;
@@ -147,7 +151,7 @@ input[type=checkbox] {
 
 .lower-wave {
     position: inherit;
-    margin-top: -220px;
+    margin-top: -335px;
 }
 
 .lower-wave2 {
@@ -220,6 +224,11 @@ input[type=checkbox] {
         margin-top: 10px;
         width: 85%;
         margin-left: 125px;
+    }
+
+    .card-style {
+        width: 100%;
+        margin-left: -1px;
     }
 
     .view-box {
@@ -299,6 +308,11 @@ input[type=checkbox] {
         margin-left: 125px;
     }
 
+    .card-style {
+        width: 100%;
+        margin-left: -1px;
+    }
+
     .view-box {
         margin-left: -145px;
     }
@@ -307,13 +321,16 @@ input[type=checkbox] {
         margin-right: -30px;
     }
 
+    .download-file-button {
+        right: 90px;
+    }
+
     .download-file-button2 {
         border: 1px solid #8a8a8a;
         position: absolute;
         background-color: white;
         border-radius: 50%;
         margin-top: -40px;
-        margin-left: 125px;
     }
 
     .lower-wave2 {
