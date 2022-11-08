@@ -8,10 +8,10 @@
             <div class="col-md file-row">
                 <div class="file-upload-sub-box">
                     <input id="file-upload" required class="upload-box" type="file" name="file_document" multiple>
-{{--                    <div class="progress">--}}
-{{--                        <div class="bar"></div >--}}
-{{--                        <div class="percent">0%</div >--}}
-{{--                    </div>--}}
+                    <div class="progress">
+                        <div class="bar"></div >
+                        <div class="percent">0%</div >
+                    </div>
                     <label for="upload_costum" class="file-upload-label text-white">
                         <h3 id="file-title" class="file-name">Drag & Drop files here</h3>
                         <button id="file-submit" class="disabled">Open the file browser</button>
@@ -91,7 +91,7 @@
                     },
                     complete: function(xhr) {
                         alert('File Has Been Uploaded Successfully');
-                        window.location.href = SITEURL +"/"+"documentFile";
+                        window.location.href = SITEURL +"/"+"documentFile/create";
                     }
                 });
             });
