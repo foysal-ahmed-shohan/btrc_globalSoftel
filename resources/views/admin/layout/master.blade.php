@@ -23,11 +23,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-    <style>
+    <!-- <style>
         .progress { position:relative; width:100%; }
         .bar { background-color: #21b507; width:0%; height:20px; }
         .percent { position:absolute; display:inline-block; left:50%; color: #040608;}
-    </style>
+    </style> -->
 
     <title>Global SofTel</title>
 </head>
