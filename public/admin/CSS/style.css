@@ -157,7 +157,7 @@ input[type=checkbox] {
 
 .lower-wave {
     position: inherit;
-    margin-top: -330px;
+    margin-top: -270px;
 }
 
 .lower-wave2 {
@@ -195,6 +195,27 @@ input[type=checkbox] {
     margin-top: -40px;
     margin-left: 130px;
     transition: transform .2s;
+}
+
+.progress {
+    margin-top: -10px;
+    position: relative;
+    width: 100%;
+    height: 25px;
+}
+
+.bar {
+    background-color: #20DF7F;
+    width: 0%;
+    height: 25px;
+}
+
+.percent {
+    font-size: 18px;
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    color: #040608;
 }
 
 @media (max-width: 992px) {

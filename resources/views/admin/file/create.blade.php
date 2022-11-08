@@ -1,13 +1,19 @@
 @extends('admin.layout.master')
 @section('content')
 <section class="container">
-{{--    <h1 class="mt-5 mb-3">File Uploader Widget</h1>--}}
+    {{-- <h1 class="mt-5 mb-3">File Uploader Widget</h1>--}}
     <form method="POST" class="mt-5" action="{{ route('documentFile.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="file-upload-box row gap-3">
             <div class="col-md file-row">
                 <div class="file-upload-sub-box">
                     <input id="file-upload" required class="upload-box" type="file" name="file_document" multiple>
+
+                    <!-- <div class="progress">
+                        <div class="bar"></div>
+                        <div class="percent">0%</div>
+                    </div> -->
+
                     <label for="upload_costum" class="file-upload-label text-white">
                         <h3 id="file-title" class="file-name">Drag & Drop files here</h3>
                         <button id="file-submit" class="disabled">Open the file browser</button>
@@ -21,7 +27,7 @@
                 </div>
                 <br>
                 <textarea placeholder="Note" class="file-description border w-100 p-3" name="note" id="" cols="30" rows="5"></textarea>
-                <button type="submit" class="mt-3 login-button w-100">Submit</button>
+                <button type="submit" class="mt-4 login-button w-100">Submit</button>
             </div>
         </div>
     </form>
@@ -41,14 +47,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($files as $value)
+                            @foreach($files as $value)
                             <tr>
                                 <td>{{$value->file_original_name}}</td>
                                 <td>{{date('d M, Y', strtotime($value->date))}}</td>
                                 <td>{{date('h:s:i A', strtotime($value->time))}}</td>
                                 <td>{{$value->Note}}</td>
                             </tr>
-                        @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -64,35 +70,34 @@
 </div>
 @endsection
 @section('extra_script')
-    <script type="text/javascript">
 
-        var SITEURL = "{{URL('/')}}";
+<script type="text/javascript">
+    var SITEURL = "{{URL('/')}}";
 
-        $(function() {
-            $(document).ready(function()
-            {
-                var bar = $('.bar');
-                var percent = $('.percent');
+    $(function() {
+        $(document).ready(function() {
+            var bar = $('.bar');
+            var percent = $('.percent');
 
-                $('form').ajaxForm({
-                    beforeSend: function() {
-                        var percentVal = '0%';
-                        bar.width(percentVal)
-                        percent.html(percentVal);
-                    },
-                    uploadProgress: function(event, position, total, percentComplete) {
-                        var percentVal = percentComplete + '%';
-                        bar.width(percentVal)
-                        percent.html(percentVal);
-                    },
-                    complete: function(xhr) {
-                        alert('File Has Been Uploaded Successfully');
-                        window.location.href = SITEURL +"/"+"documentFile/create";
-                    }
-                });
+            $('form').ajaxForm({
+                beforeSend: function() {
+                    var percentVal = '0%';
+                    bar.width(percentVal)
+                    percent.html(percentVal);
+                },
+                uploadProgress: function(event, position, total, percentComplete) {
+                    var percentVal = percentComplete + '%';
+                    bar.width(percentVal)
+                    percent.html(percentVal);
+                },
+                complete: function(xhr) {
+                    alert('File Has Been Uploaded Successfully');
+                    window.location.href = SITEURL + "/" + "documentFile";
+                }
             });
         });
-    </script>
+    });
+</script>
 <script>
     $(document).ready(function() {
         $(document).on('submit', 'form', function() {
