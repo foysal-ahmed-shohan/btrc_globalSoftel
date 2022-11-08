@@ -50,7 +50,7 @@
                                     <td>{{$value->file_original_name}}</td>
                                     <td>{{date('d M, Y', strtotime($value->date))}}</td>
                                     <td>{{date('h:s:i A', strtotime($value->time))}}</td>
-                                    <td>{{$value->Note}}</td>
+                                    <td>{{$value->note}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -84,7 +84,7 @@
                         percent.html(percentVal);
                     },
                     uploadProgress: function(event, position, total, percentComplete) {
-                        var percentVal = percentComplete + '%';
+                        var percentVal = (percentComplete-1) + '%';
                         bar.width(percentVal)
                         percent.html(percentVal);
                     },

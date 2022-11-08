@@ -46,6 +46,8 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+        //return 10;
+        toastr()->success('Success');
         if(empty($request->file_document)){
             $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
             return view('admin.file.create',compact('files'));
@@ -67,11 +69,11 @@ class FileController extends Controller
             'status'=> 1,
         );
         $value=File::create($form_data);
-        toastr()->success('Success');
         $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
         unset($request->file_document);
         //return response()->json(['success'=>'File Uploaded Successfully']);
         //return view('admin.file.create',compact('files'));
+        toastr()->success('Success');
         return redirect()->route('documentFile.create', $files);
     }
 
@@ -103,7 +105,7 @@ class FileController extends Controller
         $headers = array(
             'Content-Type: application/pdf',
         );
-        return Response::download($file, $value->file_original_name.'.'.$value->file_original_name_with_extension, $headers);
+        return Response::download($file, $value->file_original_name_with_extension, $headers);
     }
 
     /**
