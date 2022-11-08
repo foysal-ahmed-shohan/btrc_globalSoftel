@@ -16,7 +16,7 @@
                                         <img class="file-icon" src="{{asset('admin/Images/files-icon.png')}}" alt="">
                                     </div>
                                     <div class="col-8">
-                                        <a title="Download" class="download-file-button2" href="{{ route('allFile.show',$value->id) }}"><i class="bi text-black px-2 py-2 fs-3 bi-box-arrow-down"></i></a>
+                                        <a title="Download" class="download-file-button2" href="{{route('allFile.show',$value->id) }}"><i class="bi text-black px-2 py-2 fs-3 bi-box-arrow-down"></i></a>
 
 {{--                                        <div class="d-flex">--}}
 {{--                                            <form id="delete-form-{{ $value->id }}" action="{{ route('documentFile.destroy',$value->id) }}" method="POST">--}}

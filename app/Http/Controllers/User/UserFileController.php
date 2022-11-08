@@ -19,6 +19,7 @@ class UserFileController extends Controller
      */
     public function index()
     {
+        //return Auth::id();
         $files=File::where('status',1)->orderBy('id','DESC')->paginate(12);
         return view('user.index',compact('files'));
     }
@@ -56,7 +57,6 @@ class UserFileController extends Controller
         $user_info = User::where('id', $value->user_id)->first();
         //return $user_info;
         //document download activity history
-        if ($user_info->is_admin != 1){
             $form_data = array(
                 'user_id' => Auth::id(),
                 'file_id' => $id,
@@ -66,7 +66,6 @@ class UserFileController extends Controller
                 'status' => 1,
             );
             $data = FileDownloadActivity::create($form_data);
-        }
         //file download from storage
         $file= public_path(). "/file/".$value->file_modified_name;
         $headers = array(

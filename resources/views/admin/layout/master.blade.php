@@ -20,7 +20,7 @@
     </script>
     <link rel="stylesheet" href="{{asset('admin/CSS/style.css')}}">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-    <title>File Upload</title>
+    <title>Global SofTel</title>
 </head>
 
 <body class="file-upload-page-body">
