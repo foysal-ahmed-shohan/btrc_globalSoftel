@@ -8,12 +8,10 @@
             <div class="col-md file-row">
                 <div class="file-upload-sub-box">
                     <input id="file-upload" required class="upload-box" type="file" name="file_document" multiple>
-
-                    <!-- <div class="progress">
-                        <div class="bar"></div>
-                        <div class="percent">0%</div>
-                    </div> -->
-
+                       <div class="progress">
+                            <div class="bar"></div>
+                            <div class="percent">0%</div>
+                        </div>
                     <label for="upload_costum" class="file-upload-label text-white">
                         <h3 id="file-title" class="file-name">Drag & Drop files here</h3>
                         <button id="file-submit" class="disabled">Open the file browser</button>
@@ -70,10 +68,10 @@
 </div>
 @endsection
 @section('extra_script')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 <script type="text/javascript">
     var SITEURL = "{{URL('/')}}";
-
     $(function() {
         $(document).ready(function() {
             var bar = $('.bar');
@@ -91,8 +89,8 @@
                     percent.html(percentVal);
                 },
                 complete: function(xhr) {
-                    alert('File Has Been Uploaded Successfully');
-                    window.location.href = SITEURL + "/" + "documentFile";
+                    //alert('File Has Been Uploaded Successfully');
+                    window.location.href = SITEURL + "/" + "documentFile/create";
                 }
             });
         });
