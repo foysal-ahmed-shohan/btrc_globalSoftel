@@ -46,6 +46,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+       // return 10;
         if(empty($request->file_document)){
             $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
             return view('admin.file.create',compact('files'));
@@ -70,7 +71,8 @@ class FileController extends Controller
         toastr()->success('Success');
         $files=File::where('status',1)->orderBy('id','DESC')->take(5)->get();
         unset($request->file_document);
-        return view('admin.file.create',compact('files'));
+        return response()->json(['success'=>'File Uploaded Successfully']);
+        //return view('admin.file.create',compact('files'));
     }
 
     /**
