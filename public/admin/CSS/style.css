@@ -111,6 +111,7 @@ input[type=checkbox] {
     height: 150px;
     overflow: auto;
     scrollbar-width: none;
+    pointer-events: none;
 }
 
 .file-upload-label h3::-webkit-scrollbar {
