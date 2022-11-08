@@ -108,7 +108,13 @@ input[type=checkbox] {
     margin-top: -250px;
     margin-left: 160px;
     width: 320px;
-    height: 100px;
+    height: 150px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.file-upload-label h3::-webkit-scrollbar {
+    display: none;
 }
 
 .file-upload-label button {
