@@ -20,13 +20,13 @@
             <h1 class="text-white text-center">Log in</h1>
             <p class="text-center mt-5 mb-3">Log in and start managing your files!</p>
 
-            <input type="email" placeholder="email" id="exampleInputEmail1" class="input-field w-100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+            <input type="email" placeholder="email" id="exampleInputEmail1" class="input-field w-100 @error('email') is-invalid @enderror" name="email" value="foysal@gmail.com" required autocomplete="email" autofocus placeholder="Email">
             @error('email')
             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
             @enderror
-            <input type="password" placeholder="password"  id="exampleInputEmail1" class="input-field w-100 mt-4 @error('password') "is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+            <input type="password" placeholder="password"  id="exampleInputEmail1" class="input-field w-100 mt-4 @error('password') is-invalid @enderror" name="password" value="foysal@gmail.com" required autocomplete="current-password" placeholder="Password">
             @error('password')
             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
